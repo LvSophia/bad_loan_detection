@@ -38,3 +38,34 @@ Hyperparameter Tuning:
 Adjusted learning rates, thresholds, and regularization parameters.
 Evaluation:
 Monitored F1-score, Precision, Recall, and Validation Loss.
+
+Model Architecture
+The neural network has the following architecture:
+Input Layer: Accepts preprocessed loan features.
+Hidden Layers:
+Dense layers with ReLU activation.
+Dropout layers for regularization.
+Output Layer:
+Single neuron with Sigmoid activation for binary classification.
+
+Installation
+To replicate this project, follow these steps:
+Clone the repository:
+git clone https://github.com/yourusername/bad_loan_detection.git
+cd bad_loan_detection
+Create a virtual environment:
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+Install dependencies:
+pip install -r requirements.txt
+
+Usage
+To train and evaluate the model:
+
+Run Training:
+python train.py
+The model will be trained, and the best model weights will be saved.
+Run Inference on Test Data:
+python predict.py --test_data path_to_test_file.csv
+Outputs a CSV with predictions for the target column.
+
