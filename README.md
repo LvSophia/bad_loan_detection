@@ -1,104 +1,106 @@
-Bad Loan Detection
+# Bad Loan Detection
 
 This project focuses on identifying bad loans using machine learning techniques. The goal is to predict whether a loan is "bad" or "good" based on historical loan data, enabling financial institutions to manage risk more effectively.
 
-Project Overview
+## Project Overview
 
 Loan defaults pose a significant risk to financial institutions. This project uses machine learning to classify loans into:
-Good Loans 
-Bad Loans 
-The main challenges include:
-Imbalanced Data: Bad loans are far fewer than good loans.
-Generalization: Ensuring the model performs well on unseen test data.
 
-Dataset
+- **Good Loans**
+- **Bad Loans**
+
+The main challenges include:
+
+- **Imbalanced Data**: Bad loans are far fewer than good loans.
+- **Generalization**: Ensuring the model performs well on unseen test data.
+
+## Dataset
 
 The dataset includes:
 
-Features: Information about loans (e.g., loan amount, interest rate).
+- **Features**: Information about loans (e.g., loan amount, interest rate).
+- **Target**: Binary column indicating:
+  - `0 = Good Loan`
+  - `1 = Bad Loan`
 
-Target: Binary column indicating:
+### Imbalance Issue
 
-0 = Good Loan
-1 = Bad Loan
+- **Majority Class**: Good loans (~93%)
+- **Minority Class**: Bad loans (~7%)
 
-Imbalance Issue:
-
-Majority Class: Good loans (~93%)
-Minority Class: Bad loans (~7%)
-
-
-Approach
+## Approach
 
 The project workflow includes:
 
-Data Preprocessing:
+### Data Preprocessing
 
-Handling missing values.
-Encoding categorical variables.
-Feature scaling and normalization.
+- Handling missing values.
+- Encoding categorical variables.
+- Feature scaling and normalization.
 
-Class Imbalance Handling:
+### Class Imbalance Handling
 
-Applied SMOTE (Synthetic Minority Oversampling Technique).
-Weighted Loss function.
+- Applied **SMOTE** (Synthetic Minority Oversampling Technique).
+- Weighted loss function.
 
-Model Development:
+### Model Development
 
-Built a Feedforward Neural Network for binary classification.
-Used a weighted loss function to address class imbalance.
+- Built a **Feedforward Neural Network** for binary classification.
+- Used a weighted loss function to address class imbalance.
 
-Hyperparameter Tuning:
+### Hyperparameter Tuning
 
-Adjusted learning rates, thresholds, and regularization parameters.
+- Adjusted learning rates, thresholds, and regularization parameters.
 
-Evaluation:
+### Evaluation
 
-Monitored F1-score, Precision, Recall, and Validation Loss.
+- Monitored **F1-score**, **Precision**, **Recall**, and **Validation Loss**.
 
-Model Architecture
+## Model Architecture
 
 The neural network has the following architecture:
 
-Input Layer: Accepts preprocessed loan features.
+- **Input Layer**: Accepts preprocessed loan features.
+- **Hidden Layers**:
+  - Dense layers with ReLU activation.
+  - Dropout layers for regularization.
+- **Output Layer**:
+  - Single neuron with Sigmoid activation for binary classification.
 
-Hidden Layers:
-
-Dense layers with ReLU activation.
-Dropout layers for regularization.
-
-Output Layer:
-
-Single neuron with Sigmoid activation for binary classification.
-
-Installation
+## Installation
 
 To replicate this project, follow these steps:
 
-Clone the repository:
+### Clone the Repository
 
+```bash
 git clone https://github.com/LvSophia/bad_loan_detection.git
-
 cd bad_loan_detection
+```
 
-Create a virtual environment:
+### Create a Virtual Environment
 
+```bash
 python3 -m venv venv
-
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-Install dependencies:
+### Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-Usage
+## Usage
 
 To train and evaluate the model:
 
-Run EAD in JP_project.ipynb, will get a cleaned training dataset
+1. **Run EAD in `JP_project.ipynb`**:
+   - This step will produce a cleaned training dataset.
 
-Run training and inference in model_training.ipynb
+2. **Run training and inference in `model_training.ipynb`**:
+   - The model will be trained, and the best model weights will be saved.
+   - Use the saved model to predict the test dataset.
 
-The model will be trained, and the best model weights will be saved. Then use saved model to predict test dataset.
-
-Outputs a CSV with predictions for the target column.
+3. **Output**:
+   - Generates a CSV file with predictions for the target column.
