@@ -41,6 +41,7 @@ The project workflow includes:
 ### Class Imbalance Handling
 
 - Applied **SMOTE** (Synthetic Minority Oversampling Technique).
+- Subsample
 - Weighted loss function.
 
 ### Model Development
@@ -63,7 +64,7 @@ The neural network has the following architecture:
 - **Input Layer**: Accepts preprocessed loan features.
 - **Hidden Layers**:
   - Dense layers with ReLU activation.
-  - Dropout layers for regularization.
+  - Dropout layers and L2 for regularization.
 - **Output Layer**:
   - Single neuron with Sigmoid activation for binary classification.
 
@@ -90,6 +91,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+Note: I use Google colab, you might do not need some lines in the code
 
 ## Usage
 
@@ -104,3 +106,21 @@ To train and evaluate the model:
 
 3. **Output**:
    - Generates a CSV file with predictions for the target column.
+
+## Future Improvements
+
+### Explore XGBoost for Improved Performance
+
+### Feature Importance Analysis
+- Utilize **XGBoost's built-in feature importance analysis** to identify the most critical features in the dataset.
+- Visualize feature importance to gain deeper insights into loan-related attributes and their impact on outcomes.
+
+### Additional Techniques
+- Experiment with **ensemble methods** to combine the strengths of Neural Networks and XGBoost.
+  - For example, use Neural Networks for feature extraction and XGBoost for final classification.
+- Apply **SHAP (SHapley Additive exPlanations)** to:
+  - Explain individual predictions for better interpretability.
+  - Assess the contribution of each feature to the model's decision-making process.
+  - Provide stakeholders with actionable insights into loan outcomes.
+
+These improvements can enhance the overall performance, interpretability, and applicability of the model, enabling better decision-making for bad loan detection.
