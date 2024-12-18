@@ -55,7 +55,7 @@ Single neuron with Sigmoid activation for binary classification.
 Installation
 To replicate this project, follow these steps:
 Clone the repository:
-git clone https://github.com/yourusername/bad_loan_detection.git
+git clone https://github.com/LvSophia/bad_loan_detection.git
 cd bad_loan_detection
 Create a virtual environment:
 python3 -m venv venv
@@ -68,5 +68,5 @@ To train and evaluate the model:
 
 Run EAD in JP_project.ipynb, will get a cleaned training dataset
 Run training and inference in model_training.ipynb
-The model will be trained, and the best model weights will be saved.
+The model will be trained, and the best model weights will be saved. Then use saved model to predict test dataset.
 Outputs a CSV with predictions for the target column.
